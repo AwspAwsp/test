@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="fr body-content" id="body-main">
+    <div class="listview full">
+        <table class="table_wrapper-table" id="table_wrapper-table">
+            <thead>
+            <tr role="row">
+                <th class="listview-col-number sorting_disabled" style="" aria-label="序号" rowspan="1" colspan="1">
+                    <span style="color:#333">序号</span>
+                    <b class="icon"></b>
+                </th>
+                <th class="listview-col-Name sorting" style="" aria-label="名称" rowspan="1" colspan="1" data-key="f14">
+                    <span>名称</span>
+                    <b class="icon"></b>
+                </th>
+            </tr>
+            </thead>
+           <tbody>
+           <tr class="odd">
+               <td>1</td>
+               <td class="mywidth">N中信</td>
+           </tr>
+           <tr>
+               <td>2</td>
+               <td class="mywidth">N红塔证</td>
+           </tr>
+           <tr>
+               <td>3</td>
+               <td class="mywidth">众和退</td>
+           </tr>
+           <tr>
+               <td>4</td>
+               <td class="mywidth">兄弟科技</td>
+           </tr>
+           <tr>
+               <td>5</td>
+               <td class="mywidth">粤桂股份</td>
+           </tr>
+           <tr>
+               <td>6</td>
+               <td class="mywidth">大港股份</td>
+           </tr>
+           <tr>
+               <td>7</td>
+               <td class="mywidth">恒通股份</td>
+           </tr>
+           <tr>
+               <td>8</td>
+               <td class="mywidth">数字政通</td>
+           </tr>
+           <tr>
+               <td>9</td>
+               <td class="mywidth">金达威</td>
+
+           </tr>
+           <tr>
+               <td>10</td>
+               <td class="mywidth">睿能科技</td>
+           </tr>
+           <tr>
+               <td>11</td>
+               <td class="mywidth">强力新材</td>
+           </tr>
+           <tr>
+               <td>12</td>
+               <td class="mywidth">哈高科</td>
+           </tr>
+           <tr>
+               <td>13</td>
+               <td class="mywidth">上海沪工</td>
+           </tr>
+           <tr>
+               <td>14</td>
+               <td class="mywidth">华信新材</td>
+           </tr>
+           <tr>
+               <td>15</td>
+               <td class="mywidth">燕塘乳业</td>
+           </tr>
+           <tr>
+               <td>16</td>
+               <td class="mywidth">达华智能</td>
+           </tr>
+           <tr>
+               <td>17</td>
+               <td class="mywidth">万集科技</td>
+           </tr>
+           <tr>
+               <td>18</td>
+               <td class="mywidth">中远海科</td>
+           </tr>
+           <tr>
+               <td>19</td>
+               <td class="mywidth">萃华珠宝</td>
+           </tr>
+           <tr>
+               <td>20</td>
+               <td class="mywidth">鸿远电子</td>
+           </tr>
+           </tbody>
+       </table>
+    </div>
+    <div class="dataTables_wrapper">
+        <div class="dataTables_paginate paging_input" id="main-table_paginate" style="">
+            <a class="previous paginate_button disabled" data-index="1">上一页</a>
+            <span class="paginate_page">
+                    <a class="paginate_button current" data-index="1">1</a>
+                    <a class="paginate_button" data-index="2">2</a>
+                    <a class="paginate_button" data-index="3">3</a>
+                    <a class="paginate_button disabled" data-index="">…</a>
+                    <a class="paginate_button" data-index="188">188</a>
+                </span>
+            <a class="next paginate_button" data-index="2">下一页</a>
+            <span class="paginate_of">  转到</span>
+            <input class="paginate_input" type="text">
+            <a class="paginte_go">GO</a>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    function refurbishIndex(){
+
+        var optionJson=[];
+        $.ajax({
+            type:"post",
+            url:"/easyuiIndexTable",
+            data:{},
+            async: false,
+            success:function (data) {
+                optionJson=data;
+
+                var str="";
+
+                str+="<tr>"+
+                    "<td>"+optionJson.totalNumber+"</td>"+
+                    "<td>"+optionJson.actualNumber+"</td>"+
+                    "</tr>";
+                document.getElementById("tbodydata").innerHTML=str;
+            }
+        });
+    }
+</script>
+
+</body>
+</html>
